@@ -9,7 +9,7 @@ class Absen extends Model
 {
     use HasFactory;
     public $fillable = [ 
-        'nama', 
+        'nama', 'id_excel_test',
 ]; 
 // tidak aktif
     public $timestamps = false;
@@ -19,6 +19,6 @@ class Absen extends Model
    {
        // data dari model 'Guru' bisa memiliki banyak data
        // dari model 'Siswa' melalui id_guru
-       return $this->hasMany(ExcelTest::class, 'id_absen');
+       return $this->hasMany(ExcelTest::class, 'id_excel_test');
    }
 }

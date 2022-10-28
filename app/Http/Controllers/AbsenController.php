@@ -47,9 +47,15 @@ class AbsenController extends Controller
     public function store(Request $request)
     {
         
+            //validasi
+            $validated = $request->validate([
+                'nama' => 'required',
+                'id_excel_test' => 'required',
+            ]);
+        
         $ab = new Absen();
         $ab->nama = $request->nama;
-        $ab->id_absen = $request->id_absen;
+        $ab->id_excel_test = $request->id_excel_test;
         $ab->save();
         return redirect()->route('absen.index')->with(['message'=>'Data berhasil dibuat']);
     }

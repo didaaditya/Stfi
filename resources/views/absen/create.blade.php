@@ -17,7 +17,7 @@
                         <div class="form-group">
                             <label for="">Nama Mahasiswa</label>
                             {{-- <input type="text" name="id_mahasiswa"> --}}
-                            <select name="id_absen" class="form-control" required>
+                            <select name="id_excel_test" class="form-control" required>
                                 @foreach($data as $data)
                                 <option value="{{$data->id}}">{{$data->nama}}</option>
                                 @endforeach

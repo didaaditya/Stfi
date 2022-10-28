@@ -9,7 +9,7 @@ class ExcelTest extends Model
 {
     use HasFactory;
     public $fillable = [ 
-        'foto','nama','tanggal_lahir','agama','alamat','jk','nik','pendidikan','id_absen',
+        'foto','nama','tanggal_lahir','agama','alamat','jk','nik','pendidikan',
 ]; 
     // tidak aktif
     public $timestamps = false;
@@ -19,7 +19,7 @@ class ExcelTest extends Model
      {
          // data dari model 'Siswa' bisa dimiliki
          // oleh model 'Guru' melalui 'id_siswa'
-         return $this->belongsTo(Absen::class, 'id_absen');
+         return $this->belongsTo(Absen::class, 'id_excel_test');
      }
 
        // Method menampilkan image (foto)
