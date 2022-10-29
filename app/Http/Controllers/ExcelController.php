@@ -22,13 +22,13 @@ class ExcelController extends Controller
      */
     public function index()
     {
-        $data = ExcelTest::all();
-        return view('excel.index', compact('data'));
+        $excel = ExcelTest::all();
+        return view('excel.index', compact('excel'));
     }
 
     public function ExportExcel()
     {
-        return Excel::download(new ExcelExport, 'data.xlsx');
+        return Excel::download(new ExcelExport, 'excel.xlsx');
     }
 
     /**
@@ -61,21 +61,21 @@ class ExcelController extends Controller
             'foto' => 'required|image|max:2048',
         ]);
 
-        $data = new ExcelTest();
-        $data->nama = $request->nama;
-        $data->tanggal_lahir = $request->tanggal_lahir;
-        $data->agama = $request->agama;
-        $data->jk = $request->jk;
-        $data->nik = $request->nik;
-        $data->pendidikan = $request->pendidikan;
-        $data->alamat = $request->alamat;
+        $excel = new ExcelTest();
+        $excel->nama = $request->nama;
+        $excel->tanggal_lahir = $request->tanggal_lahir;
+        $excel->agama = $request->agama;
+        $excel->jk = $request->jk;
+        $excel->nik = $request->nik;
+        $excel->pendidikan = $request->pendidikan;
+        $excel->alamat = $request->alamat;
         if ($request->hasFile('foto')) {
             $image = $request->file('foto');
             $name = rand(1000, 9999) . $image->getClientOriginalName();
             $image->move('images/excel/', $name);
-            $data->foto = $name;
+            $excel->foto = $name;
         }
-        $data->save();
+        $excel->save();
         return redirect()->route('excel.index')
             ->with('success', 'Data berhasil dibuat!');
     }
@@ -88,8 +88,8 @@ class ExcelController extends Controller
      */
     public function show($id)
     {
-        $data = ExcelTest::FindOrFail($id);
-        return view('excel.show', compact('data'));
+        $excel = ExcelTest::FindOrFail($id);
+        return view('excel.show', compact('excel'));
     }
 
     /**
@@ -100,8 +100,8 @@ class ExcelController extends Controller
      */
     public function edit($id)
     {
-        $data = ExcelTest::FindOrFail($id);
-        return view('excel.edit', compact('data'));
+        $excel = ExcelTest::FindOrFail($id);
+        return view('excel.edit', compact('excel'));
     }
 
     /**
@@ -125,22 +125,22 @@ class ExcelController extends Controller
             'foto' => 'required|image|max:2048',
         ]);
 
-        $data = ExcelTest::FindOrFail($id);
-        $data->nama = $request->nama;
-        $data->tanggal_lahir = $request->tanggal_lahir;
-        $data->agama = $request->agama;
-        $data->jk = $request->jk;
-        $data->nik = $request->nik;
-        $data->pendidikan = $request->pendidikan;
-        $data->alamat = $request->alamat;
+        $excel = ExcelTest::FindOrFail($id);
+        $excel->nama = $request->nama;
+        $excel->tanggal_lahir = $request->tanggal_lahir;
+        $excel->agama = $request->agama;
+        $excel->jk = $request->jk;
+        $excel->nik = $request->nik;
+        $excel->pendidikan = $request->pendidikan;
+        $excel->alamat = $request->alamat;
         if ($request->hasFile('foto')) {
-            $data->deleteImage();
+            $excel->deleteImage();
             $image = $request->file('foto');
             $name = rand(1000, 9999) . $image->getClientOriginalName();
             $image->move('images/excel/', $name);
-            $data->foto = $name;
+            $excel->foto = $name;
         }
-        $data->save();
+        $excel->save();
         return redirect()->route('excel.index')
             ->with('success', 'Data berhasil diubah!');
     }
@@ -153,8 +153,8 @@ class ExcelController extends Controller
      */
     public function destroy($id)
     {
-        $data = ExcelTest::FindOrFail($id);
-        $data->delete();
+        $excel = ExcelTest::FindOrFail($id);
+        $excel->delete();
         return redirect()->route('excel.index')
             ->with('success', 'Data berhasil dihapus!');
     }

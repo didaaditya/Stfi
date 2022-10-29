@@ -23,7 +23,7 @@ class AbsenController extends Controller
      */
     public function index()
     {
-        $ab = Absen::with('excel')->get();
+        $ab = Absen::all();
         return view('absen.index',compact('ab'));
     }
 
@@ -34,8 +34,8 @@ class AbsenController extends Controller
      */
     public function create()
     {
-        $data = ExcelTest::all();
-        return view('absen.create',compact('data'));
+        $excel = ExcelTest::all();
+        return view('absen.create',compact('excel'));
     }
 
     /**
@@ -46,17 +46,18 @@ class AbsenController extends Controller
      */
     public function store(Request $request)
     {
-        
+
             //validasi
             $validated = $request->validate([
                 'nama' => 'required',
                 'id_excel_test' => 'required',
             ]);
-        
+
         $ab = new Absen();
         $ab->nama = $request->nama;
         $ab->id_excel_test = $request->id_excel_test;
         $ab->save();
+        // dd ($ab);
         return redirect()->route('absen.index')->with(['message'=>'Data berhasil dibuat']);
     }
 

@@ -28,17 +28,18 @@
                             </thead>
                             <tbody>
                                 @php $no=1; @endphp
-                                @foreach($ab as $ab)
+                                @foreach($ab as $data)
+                                {{-- @dd($data->excelTest->nama); --}}
                                 <tr>
                                     <td>{{$no++}}</td>
-                                    <td>{{$ab->nama}}</td>
-                                    <td>{{$ab->excel->nama}}</td>
+                                    <td>{{$data->nama}}</td>
+                                    <td>{{$data->excelTest->nama}}</td>
                                     <td>
-                                        <form action="{{route('absen.destroy',$ab->id)}}" method="post">
+                                        <form action="{{route('absen.destroy',$data->id)}}" method="post">
                                             @csrf
                                             @method('DELETE')
-                                            <a href="{{route('absen.show',$ab->id)}}" class="btn btn-sm btn-success">Lihat</a> |
-                                            <a href="{{route('absen.edit',$ab->id)}}" class="btn btn-sm btn-info">Edit</a> |
+                                            <a href="{{route('absen.show',$data->id)}}" class="btn btn-sm btn-success">Lihat</a> |
+                                            <a href="{{route('absen.edit',$data->id)}}" class="btn btn-sm btn-info">Edit</a> |
                                             <button type="submit" class="btn btn-sm btn-danger" onclick="return confirm('Apakah Anda Yakin ?')">
                                                 Hapus
                                             </button>

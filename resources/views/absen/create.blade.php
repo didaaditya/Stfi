@@ -18,8 +18,8 @@
                             <label for="">Nama Mahasiswa</label>
                             {{-- <input type="text" name="id_mahasiswa"> --}}
                             <select name="id_excel_test" class="form-control" required>
-                                @foreach($data as $data)
-                                <option value="{{$data->id}}">{{$data->nama}}</option>
+                                @foreach($excel as $item)
+                                <option value="{{$item->id}}">{{$item->nama}}</option>
                                 @endforeach
                             </select>
                         </div>

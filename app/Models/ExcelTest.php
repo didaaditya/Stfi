@@ -2,15 +2,16 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Factories\HasFactory;
+use App\Models\Absen;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 
 class ExcelTest extends Model
 {
     use HasFactory;
-    public $fillable = [ 
+    public $fillable = [
         'foto','nama','tanggal_lahir','agama','alamat','jk','nik','pendidikan',
-]; 
+];
     // tidak aktif
     public $timestamps = false;
 
@@ -19,13 +20,13 @@ class ExcelTest extends Model
      {
          // data dari model 'Siswa' bisa dimiliki
          // oleh model 'Guru' melalui 'id_siswa'
-         return $this->belongsTo(Absen::class, 'id_excel_test');
+         return $this->hasMany(Absen::class, 'id_excel_test');
      }
 
        // Method menampilkan image (foto)
-       public function image() 
+       public function image()
     {
-        if ($this->foto && file_exists(public_path('images/excel/' 
+        if ($this->foto && file_exists(public_path('images/excel/'
             . $this->foto))) {
             return asset('images/excel/' . $this->foto);
         } else {
