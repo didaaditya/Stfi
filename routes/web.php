@@ -24,5 +24,6 @@ Auth::routes();
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 Route::get('/export', [ExcelController::class, 'ExportExcel']);
+Route::get('/ab', [AbsenController::class, 'AbsenExport']);
 Route::resource('excel', ExcelController::class);
 Route::resource('absen', AbsenController::class);

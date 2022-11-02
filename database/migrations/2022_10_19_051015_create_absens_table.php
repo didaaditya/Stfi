@@ -15,9 +15,9 @@ class CreateAbsensTable extends Migration
     {
         Schema::create('absens', function (Blueprint $table) {
             $table->id();
-            $table->string('nama');
             $table->unsignedBigInteger('id_excel_test');
             $table->foreign('id_excel_test')->references('id' )->on('excel_tests')->onDelete('cascade');
+            $table->string('nama');
             $table->timestamps();
         });
     }

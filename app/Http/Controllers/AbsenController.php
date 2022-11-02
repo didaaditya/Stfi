@@ -26,6 +26,11 @@ class AbsenController extends Controller
         $ab = Absen::all();
         return view('absen.index',compact('ab'));
     }
+    
+    public function AbsenExport()
+    {
+        return Excel::download(new AbsenExport, 'absen.xlsx');
+    }
 
     /**
      * Show the form for creating a new resource.

@@ -11,17 +11,17 @@
                     <form action="{{route('absen.store')}}" method="post">
                         @csrf
                         <div class="form-group">
-                            <label for="">Nama Wali</label>
-                            <input type="text" name="nama" class="form-control" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="">Nama Mahasiswa</label>
+                            <label for="">Masukan Nama</label>
                             {{-- <input type="text" name="id_mahasiswa"> --}}
                             <select name="id_excel_test" class="form-control" required>
                                 @foreach($excel as $item)
                                 <option value="{{$item->id}}">{{$item->nama}}</option>
                                 @endforeach
                             </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="">Nama Wali</label>
+                            <input type="text" name="nama" class="form-control" required>
                         </div>
                         <div class="form-group">
                             <button type="submit" class="btn btn-primary btn-block">

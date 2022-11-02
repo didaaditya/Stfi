@@ -10,7 +10,7 @@ class Absen extends Model
 {
     use HasFactory;
     public $fillable = [
-        'nama', 'id_excel_test',
+        'id_excel_test','nama'
 ];
 // tidak aktif
     public $timestamps = false;

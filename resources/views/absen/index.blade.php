@@ -10,19 +10,21 @@
             @endif
             <div class="card">
                 <div class="card-header">
-                    ab Wali
-                    <a href="{{route('absen.create')}}" class="float-right">
+                    <a href="{{ url('/ab') }}" class="btn btn-sm btn-success" style="float: left"> 
+                                Export To Excel
+                    </a>
+                    <a href="{{route('absen.create')}}" class="btn btn-sm btn-primary" style="float: right">
                         Tambah ab
                     </a>
                 </div>
                 <div class="card-body">
                     <div class="table-responsive">
-                        <table class="table">
+                        <table class="table align-middle" id="dataTable" >
                             <thead>
                                 <tr>
                                     <th>Nomor</th>
+                                    <th>Nama Dosen</th>
                                     <th>Nama Wali</th>
-                                    <th>Nama Mahasiswa</th>
                                     <th>Aksi</th>
                                 </tr>
                             </thead>
@@ -32,8 +34,8 @@
                                 {{-- @dd($data->excelTest->nama); --}}
                                 <tr>
                                     <td>{{$no++}}</td>
-                                    <td>{{$data->nama}}</td>
                                     <td>{{$data->excelTest->nama}}</td>
+                                    <td>{{$data->nama}}</td>
                                     <td>
                                         <form action="{{route('absen.destroy',$data->id)}}" method="post">
                                             @csrf
