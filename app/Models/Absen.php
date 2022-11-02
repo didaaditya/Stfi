@@ -2,15 +2,16 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Factories\HasFactory;
+use App\Models\ExcelTest;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 
 class Absen extends Model
 {
     use HasFactory;
-    public $fillable = [ 
+    public $fillable = [
         'nama', 'id_excel_test',
-]; 
+];
 // tidak aktif
     public $timestamps = false;
 
@@ -19,6 +20,6 @@ class Absen extends Model
    {
        // data dari model 'Guru' bisa memiliki banyak data
        // dari model 'Siswa' melalui id_guru
-       return $this->hasMany(ExcelTest::class, 'id_excel_test');
+       return $this->belongsTo(ExcelTest::class, 'id_excel_test');
    }
 }

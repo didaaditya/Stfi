@@ -34,7 +34,7 @@
                                 </thead>
                                 <tbody>
                                     @php $no = 1; @endphp
-                                    @foreach ($data as $data)
+                                    @foreach ($excel as $data)
                                         <tr>
                                             <td>{{ $no++ }}</td>
                                             <td>
