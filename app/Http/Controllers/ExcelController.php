@@ -23,7 +23,7 @@ class ExcelController extends Controller
     public function index()
     {
         $excel = ExcelTest::all();
-        return view('excel.index', compact('excel'));
+        return view('excel.index', ["active" => "Dosen"], compact('excel'));
     }
 
     public function ExportExcel()
@@ -38,7 +38,7 @@ class ExcelController extends Controller
      */
     public function create()
     {
-        return view('excel.create');
+        return view('excel.create', ["active" => "Dosen"]);
     }
 
     /**
@@ -89,7 +89,7 @@ class ExcelController extends Controller
     public function show($id)
     {
         $excel = ExcelTest::FindOrFail($id);
-        return view('excel.show', compact('excel'));
+        return view('excel.show', ["active" => "Dosen"], compact('excel'));
     }
 
     /**
@@ -101,7 +101,7 @@ class ExcelController extends Controller
     public function edit($id)
     {
         $excel = ExcelTest::FindOrFail($id);
-        return view('excel.edit', compact('excel'));
+        return view('excel.edit', ["active" => "Dosen"], compact('excel'));
     }
 
     /**

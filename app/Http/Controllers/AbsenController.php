@@ -24,7 +24,7 @@ class AbsenController extends Controller
     public function index()
     {
         $ab = Absen::all();
-        return view('absen.index',compact('ab'));
+        return view('absen.index', ["active" => "Absen"], compact('ab'));
     }
 
     /**
@@ -35,7 +35,7 @@ class AbsenController extends Controller
     public function create()
     {
         $excel = ExcelTest::all();
-        return view('absen.create',compact('excel'));
+        return view('absen.create', ["active" => "Absen"], compact('excel'));
     }
 
     /**
