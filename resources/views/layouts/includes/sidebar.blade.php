@@ -43,17 +43,18 @@
               </p>
             </a>
             <ul class="nav nav-treeview">
-              <li class="{{ Request::is('excel.index')? "active" : "" }}">
-                <a href="{{ route('excel.index') }}" class="nav-link active">
+              <li class ="sidebar-item {{ request()->is('excel') ? 'active' : '' }}">
+                <a href="{{ route('excel.index') }}" class="sidebar-link">
                   <i class="far fa-circle nav-icon"></i>
-                  <p>Dosen</p>
+                  <span>Dosen</span>
                 </a>
               </li>
+
               <li class="nav-item">
-                  <li class="{{ Request::is('absen.index')? "active" : "" }}">
-                <a href="{{ route('absen.index') }}"class="nav-link">
+                <li class ="sidebar-item {{ request()->is('absen') ? 'active' : '' }}">
+                <a href="{{ route('absen.index') }}" class="sidebar-link">
                   <i class="far fa-circle nav-icon"></i>
-                  <p>absen</p>
+                  <span>Absen</span>
                 </a>
               </li>
               <li class="nav-item">
