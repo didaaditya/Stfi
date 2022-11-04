@@ -30,10 +30,9 @@
       </div>
 
       <!-- Sidebar Menu -->
-    
       <nav class="mt-2">
         <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
-<<<<<<< HEAD
+
           <!-- Add icons to the links using the .nav-icon class
                with font-awesome or any other icon font library -->
           <li class="nav-item menu-open">
@@ -57,7 +56,7 @@
                 <a href="{{ route('absen.index') }}" class="sidebar-link">
                   <i class="far fa-circle nav-icon"></i>
                   <span>Absen</span>
-=======
+
             <li class="nav-item">
                 <a href="{{ url('/excel') }}" class="nav-link {{ $active === 'Dosen' ? 'active' : '' }}">
                     <p>
@@ -70,7 +69,6 @@
                     <p>
                         Absen
                     </p>
->>>>>>> cfde7ed483f75355c0a88c6ba3f48d20003c9898
                 </a>
             </li>
             </li>
