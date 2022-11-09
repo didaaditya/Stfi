@@ -25,24 +25,32 @@
                         <input type="text" name="tempat_lahir" value="{{$excel->tempat_lahir}},{{ date('d M Y', strtotime($excel->tanggal_lahir)) }}" class="form-control" readonly>
                     </div>
                     <div class="form-group">
-                        <label for="">Agama</label>
-                        <input type="text" name="a" value="{{$excel->agama}}" class="form-control" readonly>
-                    </div>
-                    <div class="form-group">
                         <label for="">Jenis Kelamin</label>
                         <input type="text" name="b" value="{{$excel->jk}}" class="form-control" readonly>
                     </div>
                     <div class="form-group">
-                        <label for="">NIK</label>
-                        <input type="text" name="a" value="{{$excel->nik}}" class="form-control" readonly>
+                        <label for="">Agama</label>
+                        <input type="text" name="a" value="{{$excel->agama}}" class="form-control" readonly>
                     </div>
                     <div class="form-group">
-                        <label for="">Pendidikan</label>
-                        <input type="text" name="b" value="{{$excel->pendidikan}}" class="form-control" readonly>
+                        <label for="">Kewarganegaraan</label>
+                        <input type="text" name="a" value="{{$excel->kewarganegaraan}}" class="form-control" readonly>
                     </div>
                     <div class="form-group">
                         <label for="">Alamat</label>
                         <input type="text" name="b" value="{{$excel->alamat}}" class="form-control" readonly>
+                    </div>
+                    <div class="form-group">
+                        <label for="">Wilayah</label>
+                        <input type="text" name="b" value="{{$excel->wilayah}}" class="form-control" readonly>
+                    </div>
+                    <div class="form-group">
+                        <label for="">Nama Ayah</label>
+                        <input type="text" name="b" value="{{$excel->Ayah}}" class="form-control" readonly>
+                    </div>
+                    <div class="form-group">
+                        <label for="">Nama Ibu</label>
+                        <input type="text" name="b" value="{{$excel->ibu}}" class="form-control" readonly>
                     </div>
                     <div class="form-group">
                         <a href="{{url()->previous()}}" class="btn btn-primary">Kembali</a>

@@ -54,11 +54,13 @@ class ExcelController extends Controller
             'nama' => 'required',
             'tempat_lahir' => 'required',
             'tanggal_lahir' => 'required',
-            'agama' => 'required',
             'jk' => 'required',
-            'nik' => 'required|unique:excel_tests|max:255',
-            'pendidikan' => 'required',
+            'agama' => 'required',
+            'kewarganegaraan' => 'required',
             'alamat' => 'required',
+            'wilayah' => 'required',
+            'ayah' => 'required',
+            'ibu' => 'required',
             'foto' => 'required|image|max:2048',
         ]);
 
@@ -66,11 +68,13 @@ class ExcelController extends Controller
         $excel->nama = $request->nama;
         $excel->tempat_lahir = $request->tempat_lahir;
         $excel->tanggal_lahir = $request->tanggal_lahir;
-        $excel->agama = $request->agama;
         $excel->jk = $request->jk;
-        $excel->nik = $request->nik;
-        $excel->pendidikan = $request->pendidikan;
+        $excel->agama = $request->agama;
+        $excel->kewarganegaraan = $request->kewarganegaraan;
         $excel->alamat = $request->alamat;
+        $excel->wilayah = $request->wilayah;
+        $excel->ayah = $request->ayah;
+        $excel->ibu = $request->ibu;
         if ($request->hasFile('foto')) {
             $image = $request->file('foto');
             $name = rand(1000, 9999) . $image->getClientOriginalName();
@@ -120,11 +124,13 @@ class ExcelController extends Controller
             'nama' => 'required',
             'tempat_lahir' => 'required',
             'tanggal_lahir' => 'required',
-            'agama' => 'required',
             'jk' => 'required',
-            'nik' => 'required',
-            'pendidikan' => 'required',
+            'agama' => 'required',
+            'kewarganegaraan' => 'required',
             'alamat' => 'required',
+            'wilayah' => 'required',
+            'ayah' => 'required',
+            'ibu' => 'required',
             'foto' => 'required|image|max:2048',
         ]);
 
@@ -132,11 +138,13 @@ class ExcelController extends Controller
         $excel->nama = $request->nama;
         $excel->tempat_lahir = $request->tempat_lahir;
         $excel->tanggal_lahir = $request->tanggal_lahir;
-        $excel->agama = $request->agama;
         $excel->jk = $request->jk;
-        $excel->nik = $request->nik;
-        $excel->pendidikan = $request->pendidikan;
+        $excel->agama = $request->agama;
+        $excel->kewarganegaraan = $request->kewarganegaraan;
         $excel->alamat = $request->alamat;
+        $excel->wilayah = $request->wilayah;
+        $excel->ayah = $request->ayah;
+        $excel->ibu = $request->ibu;
         if ($request->hasFile('foto')) {
             $excel->deleteImage();
             $image = $request->file('foto');

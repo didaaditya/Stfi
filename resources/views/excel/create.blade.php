@@ -33,7 +33,7 @@
                                 @enderror
                             </div>
                             
-                            <div class="input-group">
+                            <div class="input-group mb-3">
                                 <span class="input-group-text">Tempat,Tanggal Lahir</span>
                                  <input type="text" class="form-control @error('tempat_lahir') is invalid @enderror"
                                     name="tempat_lahir">
@@ -50,6 +50,19 @@
                                     </span>
                                 @enderror
                               </div>
+                              <div class="mb-3">
+                                <label class="form-label">Jenis kelamin</label>
+                                <select class="form-select @error('jk') is-invalid @enderror" name="jk">
+                                    <option selected>Pilih Salah Satu</option>
+                                    <option value="laki-laki">Laki - laki</option>
+                                    <option value="perempuan">Perempuan</option>
+                                </select>
+                                @error('jk')
+                                <span class="invalid-feedback" role="alert">
+                                    <strong>{{ $message }}</strong>
+                                </span>
+                            @enderror
+                        </div>
                             <div class="mb-3">
                                 <label class="form-label">Agama</label>
                                 <select class="form-select @error('agama') is-invalid @enderror" name="agama">
@@ -66,34 +79,12 @@
                                 </span>
                             @enderror
                         </div>
+                       
                         <div class="mb-3">
-                                <label class="form-label">Jenis kelamin</label>
-                                <select class="form-select @error('jk') is-invalid @enderror" name="jk">
-                                    <option selected>Pilih Salah Satu</option>
-                                    <option value="laki-laki">Laki - laki</option>
-                                    <option value="perempuan">Perempuan</option>
-                                </select>
-                                @error('jk')
-                                <span class="invalid-feedback" role="alert">
-                                    <strong>{{ $message }}</strong>
-                                </span>
-                            @enderror
-                        </div>
-                        <div class="mb-3">
-                            <label class="form-label">Nomor Induk Kependudukan</label>
-                            <input type="number" class="form-control  @error('nik') is-invalid @enderror"
-                                name="nik">
-                            @error('nik')
-                                <span class="invalid-feedback" role="alert">
-                                    <strong>{{ $message }}</strong>
-                                </span>
-                            @enderror
-                        </div>
-                        <div class="mb-3">
-                            <label class="form-label">Pendidikan</label>
-                            <input type="text" class="form-control  @error('pendidikan') is-invalid @enderror"
-                                name="pendidikan">
-                            @error('pendidikan')
+                            <label class="form-label">Keawarganegaraan</label>
+                            <input type="number" class="form-control  @error('kewarganegaraan') is-invalid @enderror"
+                                name="kewarganegaraan">
+                            @error('kewarganegaraan')
                                 <span class="invalid-feedback" role="alert">
                                     <strong>{{ $message }}</strong>
                                 </span>
@@ -104,6 +95,36 @@
                             <input type="text" class="form-control  @error('alamat') is-invalid @enderror"
                                 name="alamat">
                             @error('alamat')
+                                <span class="invalid-feedback" role="alert">
+                                    <strong>{{ $message }}</strong>
+                                </span>
+                            @enderror
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Wilayah</label>
+                            <input type="text" class="form-control  @error('wilayah') is-invalid @enderror"
+                                name="wilayah">
+                            @error('wilayah')
+                                <span class="invalid-feedback" role="alert">
+                                    <strong>{{ $message }}</strong>
+                                </span>
+                            @enderror
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Nama Ayah</label>
+                            <input type="text" class="form-control  @error('ayah') is-invalid @enderror"
+                                name="ayah">
+                            @error('ayah')
+                                <span class="invalid-feedback" role="alert">
+                                    <strong>{{ $message }}</strong>
+                                </span>
+                            @enderror
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Nama Ibu</label>
+                            <input type="text" class="form-control  @error('ibu') is-invalid @enderror"
+                                name="ibu">
+                            @error('ibu')
                                 <span class="invalid-feedback" role="alert">
                                     <strong>{{ $message }}</strong>
                                 </span>

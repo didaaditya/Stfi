@@ -17,13 +17,15 @@ class CreateExcelTestsTable extends Migration
             $table->id();
             $table->string('foto');
             $table->string('nama');
-            $table->string('nik')->unique();
             $table->string('tempat_lahir');
             $table->string('tanggal_lahir');
-            $table->string('agama');
             $table->enum('jk',['laki-laki','perempuan']);
-            $table->string('pendidikan');
+            $table->string('agama');
+            $table->string('kewarganegaraan');
             $table->string('alamat');
+            $table->string('wilayah');
+            $table->string('ayah');
+            $table->string('ibu');
             $table->timestamps();
         });
     }

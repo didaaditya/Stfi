@@ -23,12 +23,14 @@
                                         <th>No</th>
                                         <th>foto</th>
                                         <th>Nama</th>
-                                        <th>NIK</th>
                                         <th>Tempat,Tanggal Lahir</th>
-                                        <th>Agama</th>
                                         <th>Jenis Kelamin</th>
-                                        <th>Pendidikan</th>
+                                        <th>Agama</th>
+                                        <th>Kewarganegaraan</th>
                                         <th>Alamat</th>
+                                        <th>Wilayah</th>
+                                        <th>Nama Ayah</th>
+                                        <th>Nama Ibu</th>
                                         <th>Aksi</th>
                                     </tr>
                                 </thead>
@@ -41,12 +43,14 @@
                                                 <img src="{{ $data->image() }}" style="width: 100px; height: 100px;" alt="">
                                             </td>
                                             <td>{{ $data->nama }}</td>
-                                            <td>{{ $data->nik }}</td>
                                             <td>{{ $data->tempat_lahir }},{{ date('d M Y', strtotime($data->tanggal_lahir)) }}</td>
-                                            <td>{{ $data->agama }}</td>
                                             <td>{{ $data->jk }}</td>
-                                            <td>{{ $data->pendidikan }}</td>
+                                            <td>{{ $data->agama }}</td>
+                                            <td>{{ $data->kewarganegaraan }}</td>
                                             <td>{{ $data->alamat }}</td>
+                                            <td>{{ $data->wilayah }}</td>
+                                            <td>{{ $data->ayah }}</td>
+                                            <td>{{ $data->ibu }}</td>
                                             <td>
                                                 <form action="{{ route('excel.destroy', $data->id) }}" method="post">
                                                     @csrf

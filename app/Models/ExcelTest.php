@@ -10,7 +10,7 @@ class ExcelTest extends Model
 {
     use HasFactory;
     public $fillable = [
-        'foto','nama','tempat_lahir','tanggal_lahir','agama','alamat','jk','nik','pendidikan',
+        'foto','nama','tempat_lahir','tanggal_lahir','jk','agama','kewarganegaraan','alamat','wilayah','ayah','ibu'
 ];
     // tidak aktif
     public $timestamps = false;

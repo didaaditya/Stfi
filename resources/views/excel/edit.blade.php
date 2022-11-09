@@ -10,26 +10,27 @@
                         data dosen
                     </div>
                     <div class="card-body">
-                            <div class="mb-3">
-                                    <label class="form-label">Foto Wali</label>
-                                    @if (isset($excel) && $excel->foto)
-                                        <p>
-                                            <img src="{{ asset('images/excel/' . $excel->foto) }}"
-                                                class="img-rounded img-responsive" style="width: 300px; height:350px;"
-                                                alt="">
-                                        </p>
-                                    @endif
-                                    <input type="file" class="form-control  @error('foto') is-invalid @enderror"
-                                        name="foto" value="{{ $excel->nama }}">
-                                    @error('foto')
-                                        <span class="invalid-feedback" role="alert">
-                                            <strong>{{ $message }}</strong>
-                                        </span>
-                                    @enderror
-                                </div>
                         <form action="{{ route('excel.update', $excel->id) }}" method="post">
                             @csrf
                             @method('put')
+                            <div class="mb-3">
+                                <label class="form-label">Foto Wali</label>
+                                @if (isset($excel) && $excel->foto)
+                                    <p>
+                                        <img src="{{ asset('images/excel/' . $excel->foto) }}"
+                                            class="img-rounded img-responsive" style="width: 300px; height:350px;"
+                                            alt="">
+                                    </p>
+                                @endif
+                                <input type="file" class="form-control  @error('foto') is-invalid @enderror"
+                                    name="foto" value="{{ $excel->nama }}">
+                                @error('foto')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+                            </div>
+
                             <div class="mb-3">
                                 <label class="form-label">Nama</label>
                                 <input type="text" class="form-control  @error('nama') is-invalid @enderror"
@@ -40,6 +41,7 @@
                                     </span>
                                 @enderror
                             </div>
+                            
                             <div class="input-group">
                                 <span class="input-group-text">Tempat,Tanggal Lahir</span>
                                  <input type="text" class="form-control @error('tempat_lahir') is invalid @enderror"
@@ -57,6 +59,21 @@
                                     </span>
                                 @enderror
                               </div>
+
+                              <div class="mb-3">
+                                <label class="form-label">Jenis kelamin</label>
+                                <select class="form-select @error('jk') is-invalid @enderror" name="jk">
+                                    <option selected>Pilih Salah Satu</option>
+                                    <option value="laki-laki" {{ $excel->jk == 'laki-laki' ? 'selected' : '' }}>Laki - laki</option>
+                                    <option value="perempuan" {{ $excel->jk == 'perempuan' ? 'selected' : '' }}>Perempuan</option>
+                                </select>
+                                @error('jk')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+                            </div>
+
                             <div class="mb-3">
                                 <label class="form-label">Agama</label>
                                 <select class="form-select @error('agama') is-invalid @enderror" name="agama">
@@ -76,43 +93,52 @@
                                     </span>
                                 @enderror
                             </div>
+                         
                             <div class="mb-3">
-                                <label class="form-label">Jenis kelamin</label>
-                                <select class="form-select @error('jk') is-invalid @enderror" name="jk">
-                                    <option selected>Pilih Salah Satu</option>
-                                    <option value="laki-laki" {{ $excel->jk == 'laki-laki' ? 'selected' : '' }}>Laki - laki</option>
-                                    <option value="perempuan" {{ $excel->jk == 'perempuan' ? 'selected' : '' }}>Perempuan</option>
-                                </select>
-                                @error('jk')
+                                <label class="form-label">Kewarganegaraan</label>
+                                <input type="text" class="form-control  @error('kewarganegaraan') is-invalid @enderror"
+                                    name="kewarganegaraan" value="{{ $excel->kewarganegaraan }}">
+                                @error('kewarganegaraan')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
                                     </span>
                                 @enderror
                             </div>
-                            <div class="mb-3">
-                                <label class="form-label">NIK</label>
-                                <input type="text" class="form-control  @error('nik') is-invalid @enderror"
-                                    name="nik" value="{{ $excel->nik }}">
-                                @error('nik')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
-                            </div>
-                            <div class="mb-3">
-                                <label class="form-label">Pendidikan</label>
-                                <input type="text" class="form-control  @error('pendidikan') is-invalid @enderror"
-                                    name="pendidikan" value="{{ $excel->pendidikan }}">
-                                @error('pendidikan')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
-                            </div>
+
                             <div class="mb-3">
                                 <label class="form-label">Alamat</label>
                                 <textarea class="form-control  @error('alamat') is-invalid @enderror" name="alamat">{{ $excel->alamat }}</textarea>
                                 @error('alamat')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+                            </div> 
+
+                            <div class="mb-3">
+                                <label class="form-label">Wilayah</label>
+                                <textarea class="form-control  @error('wilayah') is-invalid @enderror" name="wilayah">{{ $excel->wilayah }}</textarea>
+                                @error('wilayah')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+                            </div>
+                             
+                            <div class="mb-3">
+                                <label class="form-label">Nama Ayah</label>
+                                <textarea class="form-control  @error('ayah') is-invalid @enderror" name="ayah">{{ $excel->ayah }}</textarea>
+                                @error('ayah')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+                            </div>
+                             
+                            <div class="mb-3">
+                                <label class="form-label">Nama Ibu</label>
+                                <textarea class="form-control  @error('ibu') is-invalid @enderror" name="ibu">{{ $excel->ibu }}</textarea>
+                                @error('ibu')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
                                     </span>
