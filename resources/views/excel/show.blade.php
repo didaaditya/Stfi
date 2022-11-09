@@ -41,12 +41,12 @@
                         <input type="text" name="b" value="{{$excel->alamat}}" class="form-control" readonly>
                     </div>
                     <div class="form-group">
-                        <label for="">Wilayah</label>
+                        <label for="">Wilayah (Kec-Kota/Kab - Provinsi-Negara)</label>
                         <input type="text" name="b" value="{{$excel->wilayah}}" class="form-control" readonly>
                     </div>
                     <div class="form-group">
                         <label for="">Nama Ayah</label>
-                        <input type="text" name="b" value="{{$excel->Ayah}}" class="form-control" readonly>
+                        <input type="text" name="b" value="{{$excel->ayah}}" class="form-control" readonly>
                     </div>
                     <div class="form-group">
                         <label for="">Nama Ibu</label>

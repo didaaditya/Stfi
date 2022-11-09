@@ -22,12 +22,15 @@ class ExcelExport implements FromCollection, WithHeadings
             'id',
             'foto',
             'nama',
-            'nik',
+            'tempat_lahir',
             'tanggal_lahir',
-            'agama',
             'jk',
-            'pendidikan',
+            'agama',
+            'kewarganegaraan',
             'alamat',
+            'wilayah',
+            'ayah',
+            'ibu',
         ];
     }
 }

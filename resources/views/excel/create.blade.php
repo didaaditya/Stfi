@@ -82,7 +82,7 @@
                        
                         <div class="mb-3">
                             <label class="form-label">Keawarganegaraan</label>
-                            <input type="number" class="form-control  @error('kewarganegaraan') is-invalid @enderror"
+                            <input type="text" class="form-control  @error('kewarganegaraan') is-invalid @enderror"
                                 name="kewarganegaraan">
                             @error('kewarganegaraan')
                                 <span class="invalid-feedback" role="alert">
@@ -101,7 +101,7 @@
                             @enderror
                         </div>
                         <div class="mb-3">
-                            <label class="form-label">Wilayah</label>
+                            <label class="form-label">Wilayah (Kec-Kota/Kab - Provinsi-Negara)</label>
                             <input type="text" class="form-control  @error('wilayah') is-invalid @enderror"
                                 name="wilayah">
                             @error('wilayah')

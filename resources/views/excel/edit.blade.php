@@ -42,7 +42,7 @@
                                 @enderror
                             </div>
                             
-                            <div class="input-group">
+                            <div class="input-group mb-3">
                                 <span class="input-group-text">Tempat,Tanggal Lahir</span>
                                  <input type="text" class="form-control @error('tempat_lahir') is invalid @enderror"
                                     name="tempat_lahir" value="{{ $excel->tempat_lahir }}">
@@ -116,7 +116,7 @@
                             </div> 
 
                             <div class="mb-3">
-                                <label class="form-label">Wilayah</label>
+                                <label class="form-label">Wilayah (Kec-Kota/Kab - Provinsi-Negara)</label>
                                 <textarea class="form-control  @error('wilayah') is-invalid @enderror" name="wilayah">{{ $excel->wilayah }}</textarea>
                                 @error('wilayah')
                                     <span class="invalid-feedback" role="alert">
