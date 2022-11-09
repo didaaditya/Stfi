@@ -52,6 +52,7 @@ class ExcelController extends Controller
            //validasi
            $validated = $request->validate([
             'nama' => 'required',
+            'tempat_lahir' => 'required',
             'tanggal_lahir' => 'required',
             'agama' => 'required',
             'jk' => 'required',
@@ -63,6 +64,7 @@ class ExcelController extends Controller
 
         $excel = new ExcelTest();
         $excel->nama = $request->nama;
+        $excel->tempat_lahir = $request->tempat_lahir;
         $excel->tanggal_lahir = $request->tanggal_lahir;
         $excel->agama = $request->agama;
         $excel->jk = $request->jk;
@@ -116,6 +118,7 @@ class ExcelController extends Controller
           //validasi
           $validated = $request->validate([
             'nama' => 'required',
+            'tempat_lahir' => 'required',
             'tanggal_lahir' => 'required',
             'agama' => 'required',
             'jk' => 'required',
@@ -127,6 +130,7 @@ class ExcelController extends Controller
 
         $excel = ExcelTest::FindOrFail($id);
         $excel->nama = $request->nama;
+        $excel->tempat_lahir = $request->tempat_lahir;
         $excel->tanggal_lahir = $request->tanggal_lahir;
         $excel->agama = $request->agama;
         $excel->jk = $request->jk;

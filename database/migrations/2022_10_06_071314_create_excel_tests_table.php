@@ -18,6 +18,7 @@ class CreateExcelTestsTable extends Migration
             $table->string('foto');
             $table->string('nama');
             $table->string('nik')->unique();
+            $table->string('tempat_lahir');
             $table->string('tanggal_lahir');
             $table->string('agama');
             $table->enum('jk',['laki-laki','perempuan']);
@@ -27,7 +28,7 @@ class CreateExcelTestsTable extends Migration
         });
     }
 
-    /**
+    /**  
      * Reverse the migrations.
      *
      * @return void

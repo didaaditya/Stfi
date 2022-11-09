@@ -33,8 +33,15 @@
                                 @enderror
                             </div>
                             
-                            <div class="mb-3">
-                                <label class="form-check">Tanggal Lahir</label>
+                            <div class="input-group">
+                                <span class="input-group-text">Tempat,Tanggal Lahir</span>
+                                 <input type="text" class="form-control @error('tempat_lahir') is invalid @enderror"
+                                    name="tempat_lahir">
+                                @error('tempat_lahir')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
                                 <input type="date" class="form-control @error('tanggal_lahir') is invalid @enderror"
                                     name="tanggal_lahir">
                                 @error('tanggal_lahir')
@@ -42,7 +49,7 @@
                                         <strong>{{ $message }}</strong>
                                     </span>
                                 @enderror
-                            </div>
+                              </div>
                             <div class="mb-3">
                                 <label class="form-label">Agama</label>
                                 <select class="form-select @error('agama') is-invalid @enderror" name="agama">

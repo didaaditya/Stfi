@@ -14,7 +14,7 @@
                                 Export To Excel
                     </a>
                     <a href="{{route('absen.create')}}" class="btn btn-sm btn-primary" style="float: right">
-                        Tambah ab
+                        Tambah Data
                     </a>
                 </div>
                 <div class="card-body">
@@ -23,7 +23,7 @@
                             <thead>
                                 <tr>
                                     <th>Nomor</th>
-                                    <th>Nama Dosen</th>
+                                    <th>Nama</th>
                                     <th>Nama Wali</th>
                                     <th>Aksi</th>
                                 </tr>

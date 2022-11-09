@@ -24,7 +24,7 @@
                                         <th>foto</th>
                                         <th>Nama</th>
                                         <th>NIK</th>
-                                        <th>Tanggal Lahir</th>
+                                        <th>Tempat,Tanggal Lahir</th>
                                         <th>Agama</th>
                                         <th>Jenis Kelamin</th>
                                         <th>Pendidikan</th>
@@ -42,7 +42,7 @@
                                             </td>
                                             <td>{{ $data->nama }}</td>
                                             <td>{{ $data->nik }}</td>
-                                            <td>{{ date('d M Y', strtotime($data->tanggal_lahir)) }}</td>
+                                            <td>{{ $data->tempat_lahir }},{{ date('d M Y', strtotime($data->tanggal_lahir)) }}</td>
                                             <td>{{ $data->agama }}</td>
                                             <td>{{ $data->jk }}</td>
                                             <td>{{ $data->pendidikan }}</td>
