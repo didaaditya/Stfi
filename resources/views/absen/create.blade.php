@@ -23,8 +23,9 @@
                             <label for="">Nama Wali</label>
                             <input type="text" name="nama" class="form-control" required>
                         </div>
-                        <div class="form-group">
-                            <button type="submit" class="btn btn-primary btn-block">
+                        <div class="form-group d-flex justify-content-end">
+                            <a href="{{ route('absen.index') }}" class="btn btn-danger px-3">Batal</a>
+                            <button type="submit" class="btn btn-primary px-3 ms-2">
                                 Simpan
                             </button>
                         </div>

@@ -87,14 +87,14 @@
       <nav class="mt-2">
         <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
             <li class="nav-item">
-                <a href="{{ url('/excel') }}" class="nav-link {{ Request::is('excel') ? 'active' : '' }}">
+                <a href="{{ url('/excel') }}" class="nav-link {{ Request::is('excel') || Request::is('excel/*') ? 'active' : ''}}">
                     <p>
                         Dosen
                     </p>
                 </a>
             </li>
             <li class="nav-item">
-                <a href="{{ url('/absen') }}" class="nav-link {{ Request::is('absen') ? 'active' : '' }}">
+                <a href="{{ url('/absen') }}" class="nav-link {{ Request::is('absen') || Request::is('absen/*') ? 'active' : '' }}">
                     <p>
                         Absen
                     </p>

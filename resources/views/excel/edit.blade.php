@@ -7,7 +7,7 @@
                 @include('layouts/_flash')
                 <div class="card">
                     <div class="card-header">
-                        data dosen
+                        Data Siswa
                     </div>
                     <div class="card-body">
                         <form action="{{ route('excel.update', $excel->id) }}" method="post">
@@ -18,7 +18,7 @@
                                 @if (isset($excel) && $excel->foto)
                                     <p>
                                         <img src="{{ asset('images/excel/' . $excel->foto) }}"
-                                            class="img-rounded img-responsive" style="width: 300px; height:350px;"
+                                            class="img-rounded img-responsive" style="width: 300px; height:350px; object-fit: cover; object-position: center;"
                                             alt="">
                                     </p>
                                 @endif
@@ -41,7 +41,7 @@
                                     </span>
                                 @enderror
                             </div>
-                            
+
                             <div class="input-group mb-3">
                                 <span class="input-group-text">Tempat,Tanggal Lahir</span>
                                  <input type="text" class="form-control @error('tempat_lahir') is invalid @enderror"
@@ -93,7 +93,7 @@
                                     </span>
                                 @enderror
                             </div>
-                         
+
                             <div class="mb-3">
                                 <label class="form-label">Kewarganegaraan</label>
                                 <input type="text" class="form-control  @error('kewarganegaraan') is-invalid @enderror"
@@ -113,7 +113,7 @@
                                         <strong>{{ $message }}</strong>
                                     </span>
                                 @enderror
-                            </div> 
+                            </div>
 
                             <div class="mb-3">
                                 <label class="form-label">Wilayah (Kec-Kota/Kab - Provinsi-Negara)</label>
@@ -124,7 +124,7 @@
                                     </span>
                                 @enderror
                             </div>
-                             
+
                             <div class="mb-3">
                                 <label class="form-label">Nama Ayah</label>
                                 <textarea class="form-control  @error('ayah') is-invalid @enderror" name="ayah">{{ $excel->ayah }}</textarea>
@@ -134,7 +134,7 @@
                                     </span>
                                 @enderror
                             </div>
-                             
+
                             <div class="mb-3">
                                 <label class="form-label">Nama Ibu</label>
                                 <textarea class="form-control  @error('ibu') is-invalid @enderror" name="ibu">{{ $excel->ibu }}</textarea>
@@ -145,8 +145,9 @@
                                 @enderror
                             </div>
                             <div class="mb-3">
-                                <div class="d-grid gap-2">
-                                    <button class="btn btn-primary" type="submit">Save</button>
+                                <div class="d-flex justify-content-end align-items-center gap-2">
+                                    <a href="{{ route('excel.index') }}" class="btn btn-danger px-3">Batal</a>
+                                    <button class="btn btn-primary px-3" type="submit">Save</button>
                                 </div>
                             </div>
                         </form>

@@ -131,7 +131,7 @@ class ExcelController extends Controller
             'wilayah' => 'required',
             'ayah' => 'required',
             'ibu' => 'required',
-            'foto' => 'required|image|max:2048',
+            'foto' => 'nullable|image|max:2048',
         ]);
 
         $excel = ExcelTest::FindOrFail($id);

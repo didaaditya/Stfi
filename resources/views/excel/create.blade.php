@@ -25,25 +25,25 @@
                             <div class="mb-3">
                                 <label class="form-label">Nama</label>
                                 <input type="text" class="form-control  @error('nama') is-invalid @enderror"
-                                    name="nama">
+                                    name="nama" value="{{ old('nama') }}">
                                 @error('nama')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
                                     </span>
                                 @enderror
                             </div>
-                            
+
                             <div class="input-group mb-3">
                                 <span class="input-group-text">Tempat,Tanggal Lahir</span>
                                  <input type="text" class="form-control @error('tempat_lahir') is invalid @enderror"
-                                    name="tempat_lahir">
+                                    name="tempat_lahir" value="{{ old('tempat_lahir') }}">
                                 @error('tempat_lahir')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
                                     </span>
                                 @enderror
                                 <input type="date" class="form-control @error('tanggal_lahir') is invalid @enderror"
-                                    name="tanggal_lahir">
+                                    name="tanggal_lahir" value="{{ old('tanggal_lahir') }}">
                                 @error('tanggal_lahir')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
@@ -79,11 +79,11 @@
                                 </span>
                             @enderror
                         </div>
-                       
+
                         <div class="mb-3">
                             <label class="form-label">Keawarganegaraan</label>
                             <input type="text" class="form-control  @error('kewarganegaraan') is-invalid @enderror"
-                                name="kewarganegaraan">
+                                name="kewarganegaraan" value="{{ old('kewarganegaraan') }}">
                             @error('kewarganegaraan')
                                 <span class="invalid-feedback" role="alert">
                                     <strong>{{ $message }}</strong>
@@ -93,7 +93,7 @@
                         <div class="mb-3">
                             <label class="form-label">Alamat</label>
                             <input type="text" class="form-control  @error('alamat') is-invalid @enderror"
-                                name="alamat">
+                                name="alamat" value="{{ old('alamat') }}">
                             @error('alamat')
                                 <span class="invalid-feedback" role="alert">
                                     <strong>{{ $message }}</strong>
@@ -103,7 +103,7 @@
                         <div class="mb-3">
                             <label class="form-label">Wilayah (Kec-Kota/Kab - Provinsi-Negara)</label>
                             <input type="text" class="form-control  @error('wilayah') is-invalid @enderror"
-                                name="wilayah">
+                                name="wilayah" value="{{ old('wilayah') }}">
                             @error('wilayah')
                                 <span class="invalid-feedback" role="alert">
                                     <strong>{{ $message }}</strong>
@@ -113,7 +113,7 @@
                         <div class="mb-3">
                             <label class="form-label">Nama Ayah</label>
                             <input type="text" class="form-control  @error('ayah') is-invalid @enderror"
-                                name="ayah">
+                                name="ayah" value="{{ old('ayah') }}">
                             @error('ayah')
                                 <span class="invalid-feedback" role="alert">
                                     <strong>{{ $message }}</strong>
@@ -123,7 +123,7 @@
                         <div class="mb-3">
                             <label class="form-label">Nama Ibu</label>
                             <input type="text" class="form-control  @error('ibu') is-invalid @enderror"
-                                name="ibu">
+                                name="ibu" value="{{ old('ibu') }}">
                             @error('ibu')
                                 <span class="invalid-feedback" role="alert">
                                     <strong>{{ $message }}</strong>
@@ -131,8 +131,9 @@
                             @enderror
                         </div>
                             <div class="mb-3">
-                                <div class="d-grid gap-2">
-                                    <button class="btn btn-primary" type="submit">Save</button>
+                                <div class="d-flex justify-content-end align-items-center gap-2">
+                                    <a href="{{ route('excel.index') }}" class="btn btn-danger px-3">Batal</a>
+                                    <button class="btn btn-primary px-3" type="submit">Save</button>
                                 </div>
                             </div>
                         </form>

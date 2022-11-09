@@ -26,7 +26,7 @@ class AbsenController extends Controller
         $ab = Absen::all();
         return view('absen.index', ["active" => "Absen"], compact('ab'));
     }
-    
+
     public function AbsenExport()
     {
         return Excel::download(new AbsenExport, 'absen.xlsx');
@@ -108,6 +108,9 @@ class AbsenController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $absen = Absen::FindOrFail($id);
+        $absen->delete();
+        return redirect()->route('absen.index')
+            ->with('success', 'Data berhasil dihapus!');
     }
 }

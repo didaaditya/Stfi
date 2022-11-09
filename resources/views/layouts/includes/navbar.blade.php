@@ -8,11 +8,14 @@
         <a href="{{ route('home') }}" class="nav-link">Home</a>
       </li>
       <li class="nav-item d-none d-sm-inline-block">
-        <a href="#" class="nav-link">Contact</a>
+        <a href="{{ route('excel.index') }}" class="nav-link">Dosen</a>
+      </li>
+      <li class="nav-item d-none d-sm-inline-block">
+        <a href="{{ route('absen.index') }}" class="nav-link">Absen</a>
       </li>
     </ul>
 
-    <!-- Right navbar links --> 
+    <!-- Right navbar links -->
     <ul class="navbar-nav ml-auto">
       <!-- Navbar Search -->
       <li class="nav-item">

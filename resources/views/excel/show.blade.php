@@ -12,14 +12,14 @@
                         <label class="form-label">Foto</label>
                          @if (isset($excel) && $excel->foto)
                          <p>
-                         <img src="{{ asset('images/excel/' . $excel->foto) }}" class="img-rounded img-responsive" style="width: 300px; height:350px;" alt="">
+                         <img src="{{ asset('images/excel/' . $excel->foto) }}" class="img-rounded img-responsive" style="width: 300px; height:350px; object-fit: cover; object-position: center;" alt="">
                          </p>
                          @endif
                      </div>
                     <div class="form-group">
                         <label for="">Nama Panjang</label>
                         <input type="text" name="a" value="{{$excel->nama}}" class="form-control" readonly>
-                    </div> 
+                    </div>
                      <div class="form-group">
                         <label for="">Tanggal Lahir</label>
                         <input type="text" name="tempat_lahir" value="{{$excel->tempat_lahir}},{{ date('d M Y', strtotime($excel->tanggal_lahir)) }}" class="form-control" readonly>
@@ -52,7 +52,7 @@
                         <label for="">Nama Ibu</label>
                         <input type="text" name="b" value="{{$excel->ibu}}" class="form-control" readonly>
                     </div>
-                    <div class="form-group">
+                    <div class="d-flex justify-content-end">
                         <a href="{{url()->previous()}}" class="btn btn-primary">Kembali</a>
                     </div>
                 </div>

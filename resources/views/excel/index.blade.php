@@ -7,7 +7,7 @@
                 @include('layouts/_flash')
                 <div class="card">
                     <div class="card-header">
-                       <a href="{{ url('/export') }}" class="btn btn-sm btn-success" style="float: left"> 
+                       <a href="{{ url('/export') }}" class="btn btn-sm btn-success" style="float: left">
                                 Export To Excel
                             </a>
                         <a href="{{ route('excel.create') }}" class="btn btn-sm btn-primary" style="float: right">
@@ -51,7 +51,7 @@
                                             <td>{{ $data->wilayah }}</td>
                                             <td>{{ $data->ayah }}</td>
                                             <td>{{ $data->ibu }}</td>
-                                            <td>
+                                            <td class="text-nowrap">
                                                 <form action="{{ route('excel.destroy', $data->id) }}" method="post">
                                                     @csrf
                                                     @method('delete')

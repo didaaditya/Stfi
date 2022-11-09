@@ -10,7 +10,7 @@
             @endif
             <div class="card">
                 <div class="card-header">
-                    <a href="{{ url('/ab') }}" class="btn btn-sm btn-success" style="float: left"> 
+                    <a href="{{ url('/ab') }}" class="btn btn-sm btn-success" style="float: left">
                                 Export To Excel
                     </a>
                     <a href="{{route('absen.create')}}" class="btn btn-sm btn-primary" style="float: right">
@@ -36,7 +36,7 @@
                                     <td>{{$no++}}</td>
                                     <td>{{$data->excelTest->nama}}</td>
                                     <td>{{$data->nama}}</td>
-                                    <td>
+                                    <td class="text-nowrap">
                                         <form action="{{route('absen.destroy',$data->id)}}" method="post">
                                             @csrf
                                             @method('DELETE')
