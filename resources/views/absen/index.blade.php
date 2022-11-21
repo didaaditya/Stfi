@@ -1,20 +1,17 @@
 @extends('layouts.master')
+
 @section('content')
-<div class="container">
-    <div class="row justify-content-center">
-        <div class="col-md-10">
-            @if (session('message'))
-                <div class="alert alert-success" role="alert">
-                    {{ session('message') }}
-                </div>
-            @endif
-            <div class="card">
-                <div class="card-header">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-12">
+                @include('layouts/_flash')
+                <div class="card">
+                    <div class="card-header">
+                   <a href="{{ route('absen.create') }}" class="btn btn-sm btn-primary" style="float: right">
+                               Tambah Data
+                    </a>
                     <a href="{{ url('/ab') }}" class="btn btn-sm btn-success" style="float: left">
                                 Export To Excel
-                    </a>
-                    <a href="{{route('absen.create')}}" class="btn btn-sm btn-primary" style="float: right">
-                        Tambah Data
                     </a>
                 </div>
                 <div class="card-body">
@@ -22,9 +19,9 @@
                         <table class="table align-middle" id="dataTable" >
                             <thead>
                                 <tr>
-                                    <th>Nomor</th>
+                                    <th>No</th>
                                     <th>Nama</th>
-                                    <th>Nama Wali</th>
+                                    <th>nama wali</th>
                                     <th>Aksi</th>
                                 </tr>
                             </thead>

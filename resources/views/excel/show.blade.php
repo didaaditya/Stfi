@@ -1,21 +1,28 @@
 @extends('layouts.master')
 @section('content')
 <div class="container">
-    <div class="row justify-content-center">
+        <div class="row">
+            <div class="col">
+                <table>
+                    <div class="mb-3">
+                            <label class="form-label">Foto</label>
+                             @if (isset($excel) && $excel->foto)
+                             <p>
+                             <img src="{{ asset('images/excel/' . $excel->foto) }}" class="img-rounded img-responsive" style="width: 300px; height:350px; object-fit: cover; object-position: center;" alt="">
+                             </p>
+                             @endif
+                         </div>
+                        </table>
+            </div>
+            <div class="col">
+                <div class="row justify-content-center">
         <div class="col-md-10">
             <div class="card">
                 <div class="card-header">
                      Data Dosen
                 </div>
                 <div class="card-body">
-                     <div class="mb-3">
-                        <label class="form-label">Foto</label>
-                         @if (isset($excel) && $excel->foto)
-                         <p>
-                         <img src="{{ asset('images/excel/' . $excel->foto) }}" class="img-rounded img-responsive" style="width: 300px; height:350px; object-fit: cover; object-position: center;" alt="">
-                         </p>
-                         @endif
-                     </div>
+                     
                     <div class="form-group">
                         <label for="">Nama Panjang</label>
                         <input type="text" name="a" value="{{$excel->nama}}" class="form-control" readonly>
@@ -59,5 +66,7 @@
             </div>
         </div>
     </div>
-</div>
+            </div>
+        </div>
+    </div>
 @endsection

@@ -51,19 +51,20 @@ class AbsenController extends Controller
      */
     public function store(Request $request)
     {
+        //validasi
+        $validated = $request->validate([
+         'id_excel_test' => 'required',
+         'nama' => 'nama',
+       
+     ]);
 
-            //validasi
-            $validated = $request->validate([
-                'nama' => 'required',
-                'id_excel_test' => 'required',
-            ]);
-
-        $ab = new Absen();
-        $ab->nama = $request->nama;
-        $ab->id_excel_test = $request->id_excel_test;
+     $ab = new Absen();
+     $ab->id_excel_test = $request->id_excel_test;
+     $ab->nama = $request->nama;
         $ab->save();
         // dd ($ab);
-        return redirect()->route('absen.index')->with(['message'=>'Data berhasil dibuat']);
+        return redirect()->route('excel.index')
+        ->with('success', 'Data berhasil dibuat!');
     }
 
     /**
@@ -108,8 +109,8 @@ class AbsenController extends Controller
      */
     public function destroy($id)
     {
-        $absen = Absen::FindOrFail($id);
-        $absen->delete();
+        $ab = Absen::FindOrFail($id);
+        $ab->delete();
         return redirect()->route('absen.index')
             ->with('success', 'Data berhasil dihapus!');
     }

@@ -1,12 +1,14 @@
 @extends('layouts.master')
+
 @section('content')
-<div class="container">
-    <div class="row justify-content-center">
-        <div class="col-md-10">
-            <div class="card">
-                <div class="card-header">
-                    Tambah Data Wali
-                </div>
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-12">
+                @include('layouts/_flash')
+                <div class="card">
+                    <div class="card-header">
+                        Tambah history akademik
+                    </div>
                 <div class="card-body">
                     <form action="{{route('absen.store')}}" method="post">
                         @csrf

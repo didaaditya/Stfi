@@ -17,40 +17,6 @@
       </div>
     </div>
 
-    <!-- SidebarSearch Form -->
-    <div class="form-inline">
-      <div class="input-group" data-widget="sidebar-search">
-        <input class="form-control form-control-sidebar" type="search" placeholder="Search" aria-label="Search">
-        <div class="input-group-append">
-          <button class="btn btn-sidebar">
-            <i class="fas fa-search fa-fw"></i>
-          </button>
-        </div>
-      </div>
-    </div>
-
-    <!-- Sidebar Menu -->
-    <nav class="mt-2">
-      <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
-          <li class="nav-item">
-              <a href="{{ url('/excel') }}" class="nav-link {{ Request::is('dosen') ? 'active' : '' }}">
-                  <p>
-                      Dosen
-                  </p>
-              </a>
-          </li>
-          <li class="nav-item">
-              <a href="{{ url('/absen') }}" class="nav-link {{ Request::is('absen') ? 'active' : '' }}">
-                  <p>
-                      Absen
-                  </p>
-              </a>
-          </li>
-          </li>
-      </ul>
-    </nav>
-    <!-- /.sidebar-menu -->
-  </div>
   <!-- /.sidebar -->
 </aside><aside class="main-sidebar sidebar-dark-primary elevation-4" style="background-color:#808080">
     <!-- Brand Logo -->
@@ -88,15 +54,16 @@
         <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
             <li class="nav-item">
                 <a href="{{ url('/excel') }}" class="nav-link {{ Request::is('excel') || Request::is('excel/*') ? 'active' : ''}}">
+                  <i class="nav-icon fas fa-th"></i>
                     <p>
-                        Dosen
+                        Profile
                     </p>
                 </a>
             </li>
             <li class="nav-item">
                 <a href="{{ url('/absen') }}" class="nav-link {{ Request::is('absen') || Request::is('absen/*') ? 'active' : '' }}">
                     <p>
-                        Absen
+                        History akademik
                     </p>
                 </a>
             </li>
