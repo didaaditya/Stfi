@@ -14,9 +14,9 @@
                                 Export To Excel
                     </a>
                 </div>
-                <div class="card-body">
+                <div class="card-body" >
                     <div class="table-responsive">
-                        <table class="table align-middle" id="dataTable" >
+                        <table class="table align-middle" id="dataTable" border="1">
                             <thead>
                                 <tr>
                                     <th>No</th>
@@ -33,13 +33,21 @@
                                     <td>{{$no++}}</td>
                                     <td>{{$data->excelTest->nama}}</td>
                                     <td>{{$data->nama}}</td>
-                                    <td class="text-nowrap">
+                                    
+                                    <td >
                                         <form action="{{route('absen.destroy',$data->id)}}" method="post">
                                             @csrf
                                             @method('DELETE')
-                                            <a href="{{route('absen.show',$data->id)}}" class="btn btn-sm btn-success">Lihat</a> |
-                                            <a href="{{route('absen.edit',$data->id)}}" class="btn btn-sm btn-info">Edit</a> |
-                                            <button type="submit" class="btn btn-sm btn-danger" onclick="return confirm('Apakah Anda Yakin ?')">
+                                            <a href="{{route('absen.show',$data->id)}}" 
+                                                class="btn btn-sm btn-success">
+                                                Lihat
+                                            </a> |
+                                            <a href="{{route('absen.edit',$data->id)}}"
+                                                 class="btn btn-sm btn-warning">
+                                                 Edit
+                                                </a> |
+                                            <button type="submit" class="btn btn-sm btn-danger"
+                                             onclick="return confirm('Apakah Anda Yakin ?')">
                                                 Hapus
                                             </button>
                                         </form>

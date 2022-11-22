@@ -54,7 +54,7 @@ class AbsenController extends Controller
         //validasi
         $validated = $request->validate([
          'id_excel_test' => 'required',
-         'nama' => 'nama',
+         'nama' => 'required',
        
      ]);
 
@@ -63,7 +63,7 @@ class AbsenController extends Controller
      $ab->nama = $request->nama;
         $ab->save();
         // dd ($ab);
-        return redirect()->route('excel.index')
+        return redirect()->route('absen.index')
         ->with('success', 'Data berhasil dibuat!');
     }
 
