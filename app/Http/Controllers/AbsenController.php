@@ -106,7 +106,6 @@ class AbsenController extends Controller
             'id_excel_test' => 'required',
             'tanggal' => 'required',
             'jam_masuk' => 'required',
-            'status' => 'required',
         ]);
         
         $ab = Absen::findOrFail($id);
@@ -115,7 +114,6 @@ class AbsenController extends Controller
         $ab->jam_masuk = $request->jam_masuk;
         $ab->jam_keluar = date('h:i:s');
         $ab->jk = $request->jk;
-        $ab->status = $request->status;
             $ab->save();
             return redirect()->route('absen.index')
             ->with('success', 'Data berhasil dibuat');
