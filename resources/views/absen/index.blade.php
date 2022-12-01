@@ -23,8 +23,9 @@
                                     <th>Nama</th>
                                     <th>Tanggal masuk</th>
                                     <th>Jam masuk</th>
-                                    <th>Status</th>
-                                    <th>Keterangan</th>
+                                    <th>Jam keluar</th>
+                                    <th>Total Jam Kerja</th>
+                                    <th>Rekap</th>
                                     <th>Aksi</th>
                                 </tr>
                             </thead>
@@ -37,22 +38,23 @@
                                     <td>{{$data->ExcelTest->nama}}</td>
                                     <td>{{$data->tanggal}}</td>
                                     <td>{{$data->jam_masuk}}</td>
+                                    <td>{{$data->jam_keluar}}</td>
                                     <td>{{$data->status}}</td>
-                                    <td>{{$data->keterangan}}</td>
+                                    <td></td>
                                     
                                     <td >
                                         <form action="{{route('absen.destroy',$data->id)}}" method="post">
                                             @csrf
                                             @method('DELETE')
                                             <a href="{{route('absen.show',$data->id)}}" 
-                                                class="btn btn-sm btn-success">
+                                                class="btn btn-sm btn-outline-success">
                                                 Lihat
                                             </a> |
                                             <a href="{{route('absen.edit',$data->id)}}"
-                                                 class="btn btn-sm btn-warning">
+                                                 class="btn btn-sm btn-outline-warning">
                                                  Edit
                                                 </a> |
-                                            <button type="submit" class="btn btn-sm btn-danger"
+                                            <button type="submit" class="btn btn-sm btn-outline-danger"
                                              onclick="return confirm('Apakah Anda Yakin ?')">
                                                 Hapus
                                             </button>

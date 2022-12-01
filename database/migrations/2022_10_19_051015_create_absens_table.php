@@ -19,8 +19,9 @@ class CreateAbsensTable extends Migration
             $table->foreign('id_excel_test')->references('id' )->on('excel_tests')->onDelete('cascade');
             $table->date('tanggal');
             $table->time('jam_masuk');
-            $table->String('status');
-            $table->String('keterangan')->nullable();
+            $table->time('jam_keluar')->nullable();
+            $table->string('jk')->nullable();
+            $table->String('rekap')->nullable();
             $table->timestamps();
         });
     }

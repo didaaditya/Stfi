@@ -56,8 +56,6 @@ class AbsenController extends Controller
         //validasi
         $validated = $request->validate([
          'id_excel_test' => 'required',
-         'status' => 'required',
-         'keterangan' => 'nullable',
        
      ]);
 
@@ -65,8 +63,6 @@ class AbsenController extends Controller
      $ab->id_excel_test = $request->id_excel_test;
      $ab->tanggal = date('Y-m-d');
      $ab->jam_masuk = date('h:i:s');
-     $ab->status = $request->status;
-     $ab->keterangan = $request->keterangan;
         $ab->save();
         // dd ($ab);
         return redirect()->route('absen.index')
@@ -94,7 +90,7 @@ class AbsenController extends Controller
     {
        $ab = Absen::findOrFail($id);
        $excel = ExcelTest::all();
-       return view('absen.index', compact('ab','excel'));
+       return view('absen.edit', compact('ab','excel'));
     }
 
     /**
@@ -107,12 +103,22 @@ class AbsenController extends Controller
     public function update(Request $request, $id)
     {
         $validate = $request->validate([
-            'id_excel_test' => 'requiered',
-            'id_excel_test' => 'requiered',
-            'id_excel_test' => 'requiered',
-            'id_excel_test' => 'requiered',
-            'id_excel_test' => 'requiered',
+            'id_excel_test' => 'required',
+            'tanggal' => 'required',
+            'jam_masuk' => 'required',
+            'status' => 'required',
         ]);
+        
+        $ab = Absen::findOrFail($id);
+        $ab->id_excel_test = $request->id_excel_test;
+        $ab->tanggal = $request->tanggal;
+        $ab->jam_masuk = $request->jam_masuk;
+        $ab->jam_keluar = date('h:i:s');
+        $ab->jk = $request->jk;
+        $ab->status = $request->status;
+            $ab->save();
+            return redirect()->route('absen.index')
+            ->with('success', 'Data berhasil dibuat');
     }
 
     /**

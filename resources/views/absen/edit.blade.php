@@ -10,7 +10,7 @@
                         Data Siswa
                     </div>
                     <div class="card-body">
-                        <form action="{{ route('absen.update', $excel->id) }}" method="post">
+                        <form action="{{ route('absen.update', $ab->id) }}" method="post">
                             @csrf
                             @method('put')
                             <div class="mb-3">
@@ -50,30 +50,40 @@
                                 @enderror
                             </div>
 
+                            
+                            <div class="mb-3">
+                                <label class="form-label">Jam keluar</label>
+                                <textarea class="form-control  @error('jam_keluar') is-invalid @enderror" name="jam_keluar"
+                                 placeholder="Langsung tekan save saja">{{ $ab->jam_keluar }}</textarea>
+                                @error('jam_keluar')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+                            </div>
+{{-- 
                             <div class="mb-3">
                                 <label class="form-label">Status</label>
-                                <input type="text" class="form-control  @error('status') is-invalid @enderror"
-                                    name="status" value="{{ $ab->status }}">
+                                <select class="form-select @error('status') is-invalid @enderror" name="status">
+                                    <option selected></option>
+                                    <option value="Hadir" {{ $ab->status == 'Hadir' ? 'selected' : '' }}>Hadir</option>
+                                    <option value="Alfa" {{ $ab->status == 'Alfa' ? 'selected' : '' }}>Alfa
+                                    </option>
+                                    <option value="Sakit" {{ $ab->status == 'Sakit' ? 'selected' : '' }}>Sakit</option>
+                                    <option value="Izin" {{ $ab->status == 'Izin' ? 'selected' : '' }}>Izin
+                                    </option>
+                                </select>
                                 @error('status')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
                                     </span>
                                 @enderror
-                            </div>
-                            
-                            <div class="mb-3">
-                                <label class="form-label">Keterangan</label>
-                                <textarea class="form-control  @error('keterangan') is-invalid @enderror" name="keterangan">{{ $ab->keterangan }}</textarea>
-                                @error('keterangan')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
-                            </div>
+                            </div> --}}
+
                             <div class="mb-3">
                                 <div class="d-flex justify-content-end align-items-center gap-2">
-                                    <a href="{{ route('excel.index') }}" class="btn btn-danger px-3">Batal</a>
                                     <button class="btn btn-primary px-3" type="submit">Save</button>
+                                    <a href="{{ route('absen.index') }}" class="btn btn-danger px-3">Batal</a>
                                 </div>
                             </div>
                         </form>
