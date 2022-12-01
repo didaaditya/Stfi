@@ -7,10 +7,7 @@
                 @include('layouts/_flash')
                 <div class="card">
                     <div class="card-header">
-                            <a href="{{ route('absen.index') }}" class="btn btn-sm btn-primary" style="float: left">
-                                Riwayat Akademik
-                            </a>
-                       <a href="{{ url('/export') }}" class="btn btn-sm btn-success" style="float: right">
+                       <a href="{{ url('/export') }}" class="btn btn-sm btn-success" style="float: leftRNN">
                                 Export To Excel
                             </a>
                        
@@ -59,9 +56,9 @@
                                                 <form action="{{ route('excel.destroy', $data->id) }}" method="post">
                                                     @csrf
                                                     @method('delete')
-                                                    <a href= " {{ route('excel.show', $data->id) }} " class="btn btn-sm btn-success " > Show </a> |
-                                                    <a href= " {{ route('excel.edit', $data->id) }} " class="btn btn-sm btn-info " > Edit </a> |
-                                                    <button type="submit" class="btn btn-sm btn-danger" onclick="return confirm('Apakah Anda Yakin?')"> Delete </button>
+                                                    <a href= " {{ route('excel.edit', $data->id) }} " class="btn btn-sm btn-outline-success"> Edit </a> |
+                                                    <a href= " {{ route('excel.show', $data->id) }} " class="btn btn-sm btn-outline-warning " > Show </a> |
+                                                    <button type="submit" class="btn btn-sm btn-outline-danger" onclick="return confirm('Apakah Anda Yakin?')"> Delete </button>
                                                 </form>
                                             </td>
                                         </tr>

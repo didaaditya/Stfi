@@ -21,7 +21,10 @@
                                 <tr>
                                     <th>No</th>
                                     <th>Nama</th>
-                                    <th>nama wali</th>
+                                    <th>Tanggal masuk</th>
+                                    <th>Jam masuk</th>
+                                    <th>Status</th>
+                                    <th>Keterangan</th>
                                     <th>Aksi</th>
                                 </tr>
                             </thead>
@@ -31,8 +34,11 @@
                                 {{-- @dd($data->excelTest->nama); --}}
                                 <tr>
                                     <td>{{$no++}}</td>
-                                    <td>{{$data->excelTest->nama}}</td>
-                                    <td>{{$data->nama}}</td>
+                                    <td>{{$data->ExcelTest->nama}}</td>
+                                    <td>{{$data->tanggal}}</td>
+                                    <td>{{$data->jam_masuk}}</td>
+                                    <td>{{$data->status}}</td>
+                                    <td>{{$data->keterangan}}</td>
                                     
                                     <td >
                                         <form action="{{route('absen.destroy',$data->id)}}" method="post">

@@ -23,7 +23,7 @@ class CreateExcelTestsTable extends Migration
             $table->string('agama');
             $table->string('kewarganegaraan');
             $table->string('alamat');
-            $table->string('wilayah');
+            $table->string('wilayah')->nullable();
             $table->string('ayah');
             $table->string('ibu');
             $table->timestamps();

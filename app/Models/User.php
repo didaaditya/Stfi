@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use App\Model\Pendidikan;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
@@ -41,4 +42,12 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+         // membuat relasi one to many di model
+         public function Pendidikan()
+         {
+             // data dari model 'Siswa' bisa dimiliki
+             // oleh model 'Guru' melalui 'id_siswa'
+             return $this->hasMany(Pendidikan::class, 'id_user');
+         }
 }

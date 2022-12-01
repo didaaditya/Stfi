@@ -63,6 +63,7 @@
                                 </span>
                             @enderror
                         </div>
+                        
                             <div class="mb-3">
                                 <label class="form-label">Agama</label>
                                 <select class="form-select @error('agama') is-invalid @enderror" name="agama">
@@ -132,8 +133,8 @@
                         </div>
                             <div class="mb-3">
                                 <div class="d-flex justify-content-end align-items-center gap-2">
-                                    <a href="{{ route('excel.index') }}" class="btn btn-danger px-3">Batal</a>
                                     <button class="btn btn-primary px-3" type="submit">Save</button>
+                                    <a href="{{ route('excel.index') }}" class="btn btn-danger px-3">Batal</a>
                                 </div>
                             </div>
                         </form>

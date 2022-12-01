@@ -17,7 +17,10 @@ class CreateAbsensTable extends Migration
             $table->id();
             $table->unsignedBigInteger('id_excel_test');
             $table->foreign('id_excel_test')->references('id' )->on('excel_tests')->onDelete('cascade');
-            $table->string('nama');
+            $table->date('tanggal');
+            $table->time('jam_masuk');
+            $table->String('status');
+            $table->String('keterangan')->nullable();
             $table->timestamps();
         });
     }

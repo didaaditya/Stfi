@@ -1,5 +1,6 @@
 <?php
 
+use app\Http\Controllers\PendidikanController;
 use App\Http\Controllers\ExcelController;
 use App\Http\Controllers\AbsenController;
 use Illuminate\Support\Facades\Route;
@@ -27,3 +28,4 @@ Route::get('/export', [ExcelController::class, 'ExportExcel']);
 Route::get('/ab', [AbsenController::class, 'AbsenExport']);
 Route::resource('excel', ExcelController::class);
 Route::resource('absen', AbsenController::class);
+Route::resource('pendidikan', PendidikanController::class);

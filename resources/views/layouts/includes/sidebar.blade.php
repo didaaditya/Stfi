@@ -62,8 +62,9 @@
             </li>
             <li class="nav-item">
                 <a href="{{ url('/absen') }}" class="nav-link {{ Request::is('absen') || Request::is('absen/*') ? 'active' : '' }}">
+                  <i class="nav-icon fas fa-edit"></i>
                     <p>
-                        History akademik
+                        Absensi
                     </p>
                 </a>
             </li>

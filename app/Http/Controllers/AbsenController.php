@@ -51,16 +51,22 @@ class AbsenController extends Controller
      */
     public function store(Request $request)
     {
+        date_default_timezone_set('Asia/Jakarta');
+
         //validasi
         $validated = $request->validate([
          'id_excel_test' => 'required',
-         'nama' => 'required',
+         'status' => 'required',
+         'keterangan' => 'nullable',
        
      ]);
 
      $ab = new Absen();
      $ab->id_excel_test = $request->id_excel_test;
-     $ab->nama = $request->nama;
+     $ab->tanggal = date('Y-m-d');
+     $ab->jam_masuk = date('h:i:s');
+     $ab->status = $request->status;
+     $ab->keterangan = $request->keterangan;
         $ab->save();
         // dd ($ab);
         return redirect()->route('absen.index')
@@ -86,7 +92,9 @@ class AbsenController extends Controller
      */
     public function edit($id)
     {
-        //
+       $ab = Absen::findOrFail($id);
+       $excel = ExcelTest::all();
+       return view('absen.index', compact('ab','excel'));
     }
 
     /**
@@ -98,7 +106,13 @@ class AbsenController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $validate = $request->validate([
+            'id_excel_test' => 'requiered',
+            'id_excel_test' => 'requiered',
+            'id_excel_test' => 'requiered',
+            'id_excel_test' => 'requiered',
+            'id_excel_test' => 'requiered',
+        ]);
     }
 
     /**

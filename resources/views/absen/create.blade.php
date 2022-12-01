@@ -21,10 +21,34 @@
                                 @endforeach
                             </select>
                         </div>
-                        <div class="form-group">
-                            <label for="">Nama Wali</label>
-                            <input type="text" name="nama" class="form-control" required>
-                        </div>
+                       
+                        <div class="mb-3">
+                            <label class="form-label">Status</label>
+                            <select class="form-select @error('status') is-invalid @enderror" name="status">
+                                <option value="Hadir">Hadir</option>
+                                <option value="Alfa">Alfa</option>
+                                <option value="Sakit">Sakit</option>
+                                <option value="Izin">Izin</option>
+                                <option value="Katolik">Katolik</option>
+                            </select>
+                            @error('status')
+                            <span class="invalid-feedback" role="alert">
+                                <strong>{{ $message }}</strong>
+                            </span>
+                        @enderror
+                    </div>
+                    
+                    <div class="mb-3">
+                        <label class="form-label">Keterangan</label>
+                        <input type="text" class="form-control  @error('keterangan') is-invalid @enderror"
+                            name="keterangan">
+                        @error('keterangan')
+                            <span class="invalid-feedback" role="alert">
+                                <strong>{{ $message }}</strong>
+                            </span>
+                        @enderror
+                    </div>
+                    
                         <div class="form-group d-flex justify-content-end">
                             <a href="{{ route('absen.index') }}" class="btn btn-danger px-3">Batal</a>
                             <button type="submit" class="btn btn-primary px-3 ms-2">

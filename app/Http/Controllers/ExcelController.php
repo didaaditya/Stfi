@@ -58,7 +58,7 @@ class ExcelController extends Controller
             'agama' => 'required',
             'kewarganegaraan' => 'required',
             'alamat' => 'required',
-            'wilayah' => 'required',
+            'wilayah' => 'nullable',
             'ayah' => 'required',
             'ibu' => 'required',
             'foto' => 'required|image|max:2048',
@@ -67,7 +67,7 @@ class ExcelController extends Controller
         $excel = new ExcelTest();
         $excel->nama = $request->nama;
         $excel->tempat_lahir = $request->tempat_lahir;
-        $excel->tanggal_lahir = $request->tanggal_lahir;
+        $excel->tanggal_lahir = date('d-M-Y');
         $excel->jk = $request->jk;
         $excel->agama = $request->agama;
         $excel->kewarganegaraan = $request->kewarganegaraan;
@@ -128,7 +128,7 @@ class ExcelController extends Controller
             'agama' => 'required',
             'kewarganegaraan' => 'required',
             'alamat' => 'required',
-            'wilayah' => 'required',
+            'wilayah' => 'nullable',
             'ayah' => 'required',
             'ibu' => 'required',
             'foto' => 'nullable|image|max:2048',
