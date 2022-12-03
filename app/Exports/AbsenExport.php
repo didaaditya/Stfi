@@ -14,4 +14,16 @@ class AbsenExport implements FromCollection
     {
         return Absen::all();
     }
+    public function headings(): array
+    {
+        return [
+            'id',
+            'nama',
+            'tanggal_masuk',
+            'jam_masuk',
+            'jam_keluar',
+            'jk',
+            'rekap',
+        ];
+    }
 }

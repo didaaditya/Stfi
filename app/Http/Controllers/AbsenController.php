@@ -8,6 +8,8 @@ use App\Models\ExcelTest;
 use Illuminate\Http\Request;
 
 use App\Exports\AbsenExport;
+
+use App\Exports\ExcelExport;
 use Maatwebsite\Excel\Facades\Excel;
 
 class AbsenController extends Controller
@@ -29,7 +31,7 @@ class AbsenController extends Controller
 
     public function AbsenExport()
     {
-        return Excel::download(new AbsenExport, 'absen.xlsx');
+        return Excel::download(new AbsenExport, 'absen.xlsx');[]
     }
 
     /**
@@ -112,8 +114,9 @@ class AbsenController extends Controller
         $ab->id_excel_test = $request->id_excel_test;
         $ab->tanggal = $request->tanggal;
         $ab->jam_masuk = $request->jam_masuk;
-        $ab->jam_keluar = date('h:i:s');
+        $ab->jam_keluar = date('h:m:s');
         $ab->jk = $request->jk;
+        
             $ab->save();
             return redirect()->route('absen.index')
             ->with('success', 'Data berhasil dibuat');

@@ -1,0 +1,30 @@
+Aplikasi kepegawaian 
+target projek sampai 100% awal januari 5-8 2023 
+I. profil : data di sesuaikan dengan data isian kepegawaian, pak sony,bu utami
+II. riwayat pendidikan : 
+1. sd
+2. smp
+3. sma/smk
+4. d1/d3/d4
+5. s1
+6. profesi
+7. s2
+8. s3
+9. Guru besar
+ketentuan : tahun masuk, tahun lulus, nama sekolah/perguruan tinggi, no ijazah, upload dokumen
+
+III. sertifikat
+ketentuan : upload dokumen, untuk data isiannya :
+1. judul kegiatan
+2. tanggal pelaksanaan 
+3.  waktu pelaksaan 
+
+IV. riwayat jabatan fungsional dan pangkat/golongan 
+1. jabatan
+2. tmt
+ketentuan : data di sesuaikan dengan data kepegawaian/ bu utami 
+
+resume : 
+1. profil data keseluruhan tampil semuanya. data masing masing tampil di show
+2. nama sekolah atau nama perguruan tinggi, tahun masuk tahun lulus, no ijazah, upload file
+3. nama jabatan masuk kedalam isian dropdown

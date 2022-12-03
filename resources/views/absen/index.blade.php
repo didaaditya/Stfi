@@ -36,10 +36,11 @@
                                 <tr>
                                     <td>{{$no++}}</td>
                                     <td>{{$data->ExcelTest->nama}}</td>
-                                    <td>{{$data->tanggal}}</td>
+                                    <td>{{ date('d M Y', strtotime($data->tanggal)) }}</td>
                                     <td>{{$data->jam_masuk}}</td>
                                     <td>{{$data->jam_keluar}}</td>
-                                    <td>{{$data->status}}</td>
+                                    <td></td>
+                                    <td></td>
                                     <td></td>
                                     
                                     <td >
